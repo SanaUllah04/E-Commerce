@@ -4,6 +4,9 @@
   "description": "This is a fully functional, responsive E-Commerce Web Application optimized for both Web and Mobile platforms.",
   "main": "index.js",
   "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -26,6 +29,9 @@
     "zod": "^4.3.6"
   },
   "devDependencies": {
-    "@types/bcryptjs": "^2.4.6"
+    "@types/bcryptjs": "^2.4.6",
+    "@types/node": "25.3.2",
+    "@types/react": "19.2.14",
+    "typescript": "5.9.3"
   }
 }
