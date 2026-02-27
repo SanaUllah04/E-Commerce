@@ -1,101 +1,6 @@
-[00:00:01.790] Server  LOG     ✓ Ready in 1400ms
-[00:00:08.220] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:00:10.992] Server  ERROR   ⨯ ./src/app/(admin)/admin/page.tsx:3:1
-Module not found: Can't resolve '@/lib/auth'
-  1 | import Link from "next/link";
-  2 | import { getServerSession } from "next-auth";
-> 3 | import { authOptions } from "@/lib/auth";
-    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  4 | import dbConnect from "@/lib/db";
-  5 | import Product from "@/models/Product";
-  6 | import Order from "@/models/Order";
-
-
-
-https://nextjs.org/docs/messages/module-not-found
-
-
-
-./src/app/(admin)/layout.tsx:3:1
-Module not found: Can't resolve '@/lib/auth'
-  1 | import Link from "next/link";
-  2 | import { getServerSession } from "next-auth";
-> 3 | import { authOptions } from "@/lib/auth";
-    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  4 | import { redirect } from "next/navigation";
-  5 |
-  6 | const navLinks = [
-
-
-
-https://nextjs.org/docs/messages/module-not-found
-
-
-
-./src/app/(admin)/admin/page.tsx:4:1
-Module not found: Can't resolve '@/lib/db'
-  2 | import { getServerSession } from "next-auth";
-  3 | import { authOptions } from "@/lib/auth";
-> 4 | import dbConnect from "@/lib/db";
-    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  5 | import Product from "@/models/Product";
-  6 | import Order from "@/models/Order";
-  7 | import User from "@/models/User";
-
-
-
-https://nextjs.org/docs/messages/module-not-found
-
-
-
-./src/app/(admin)/admin/page.tsx:6:1
-Module not found: Can't resolve '@/models/Order'
-  4 | import dbConnect from "@/lib/db";
-  5 | import Product from "@/models/Product";
-> 6 | import Order from "@/models/Order";
-    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  7 | import User from "@/models/User";
-  8 |
-  9 | async function getDashboardStats() {
-
-
-
-https://nextjs.org/docs/messages/module-not-found
-
-
-
-./src/app/(admin)/admin/page.tsx:5:1
-Module not found: Can't resolve '@/models/Product'
-  3 | import { authOptions } from "@/lib/auth";
-  4 | import dbConnect from "@/lib/db";
-> 5 | import Product from "@/models/Product";
-    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  6 | import Order from "@/models/Order";
-  7 | import User from "@/models/User";
-  8 |
-
-
-
-https://nextjs.org/docs/messages/module-not-found
-
-
-
-./src/app/(admin)/admin/page.tsx:7:1
-Module not found: Can't resolve '@/models/User'
-   5 | import Product from "@/models/Product";
-   6 | import Order from "@/models/Order";
->  7 | import User from "@/models/User";
-     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-   8 |
-   9 | async function getDashboardStats() {
-  10 |     await dbConnect();
-
-
-
-https://nextjs.org/docs/messages/module-not-found
-
-
-[00:00:11.758] Server  ERROR   ⨯ ./src/app/(shop)/layout.tsx:1:1
+[00:00:01.009] Server  LOG     ✓ Ready in 751ms
+[00:00:03.253] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:07.473] Server  ERROR   ⨯ ./src/app/(shop)/layout.tsx:1:1
 Module not found: Can't resolve '@/components/Navbar'
 > 1 | import Navbar from "@/components/Navbar";
     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -123,15 +28,13 @@ Module not found: Can't resolve '@/components/ProductCard'
 https://nextjs.org/docs/messages/module-not-found
 
 
-[00:00:12.998] Server  ERROR   ⨯ ./src/app/(admin)/admin/page.tsx:3:1
-Module not found: Can't resolve '@/lib/auth'
-  1 | import Link from "next/link";
-  2 | import { getServerSession } from "next-auth";
-> 3 | import { authOptions } from "@/lib/auth";
+[00:00:07.834] Server  ERROR   ⨯ ./src/app/(shop)/layout.tsx:1:1
+Module not found: Can't resolve '@/components/Navbar'
+> 1 | import Navbar from "@/components/Navbar";
     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  4 | import dbConnect from "@/lib/db";
-  5 | import Product from "@/models/Product";
-  6 | import Order from "@/models/Order";
+  2 |
+  3 | export default function ShopLayout({ children }: { children: React.ReactNode }) {
+  4 |     return (
 
 
 
@@ -139,357 +42,34 @@ https://nextjs.org/docs/messages/module-not-found
 
 
 
-./src/app/(admin)/layout.tsx:3:1
-Module not found: Can't resolve '@/lib/auth'
-  1 | import Link from "next/link";
-  2 | import { getServerSession } from "next-auth";
-> 3 | import { authOptions } from "@/lib/auth";
+./src/app/(shop)/products/page.tsx:2:1
+Module not found: Can't resolve '@/components/ProductCard'
+  1 | import { Suspense } from "react";
+> 2 | import ProductCard from "@/components/ProductCard";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 | import ProductSkeleton from "@/components/ProductSkeleton";
+  4 |
+  5 | async function getProducts(search?: string, category?: string) {
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:00:08.117] Browser ERROR   uncaughtError: Error: ./src/app/(shop)/layout.tsx:1:1
+Module not found: Can't resolve '@/components/Navbar'
+> 1 | import Navbar from "@/components/Navbar";
     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  4 | import { redirect } from "next/navigation";
-  5 |
-  6 | const navLinks = [
+  2 |
+  3 | export default function ShopLayout({ children }: { children: React.ReactNode }) {
+  4 |     return (
 
 
 
 https://nextjs.org/docs/messages/module-not-found
 
 
-
-./src/app/(admin)/admin/page.tsx:4:1
-Module not found: Can't resolve '@/lib/db'
-  2 | import { getServerSession } from "next-auth";
-  3 | import { authOptions } from "@/lib/auth";
-> 4 | import dbConnect from "@/lib/db";
-    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  5 | import Product from "@/models/Product";
-  6 | import Order from "@/models/Order";
-  7 | import User from "@/models/User";
-
-
-
-https://nextjs.org/docs/messages/module-not-found
-
-
-
-./src/app/(admin)/admin/page.tsx:6:1
-Module not found: Can't resolve '@/models/Order'
-  4 | import dbConnect from "@/lib/db";
-  5 | import Product from "@/models/Product";
-> 6 | import Order from "@/models/Order";
-    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  7 | import User from "@/models/User";
-  8 |
-  9 | async function getDashboardStats() {
-
-
-
-https://nextjs.org/docs/messages/module-not-found
-
-
-
-./src/app/(admin)/admin/page.tsx:5:1
-Module not found: Can't resolve '@/models/Product'
-  3 | import { authOptions } from "@/lib/auth";
-  4 | import dbConnect from "@/lib/db";
-> 5 | import Product from "@/models/Product";
-    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  6 | import Order from "@/models/Order";
-  7 | import User from "@/models/User";
-  8 |
-
-
-
-https://nextjs.org/docs/messages/module-not-found
-
-
-
-./src/app/(admin)/admin/page.tsx:7:1
-Module not found: Can't resolve '@/models/User'
-   5 | import Product from "@/models/Product";
-   6 | import Order from "@/models/Order";
->  7 | import User from "@/models/User";
-     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-   8 |
-   9 | async function getDashboardStats() {
-  10 |     await dbConnect();
-
-
-
-https://nextjs.org/docs/messages/module-not-found
-
-
-[00:00:13.142] Server  ERROR   ⨯ ./src/app/(admin)/admin/page.tsx:3:1
-Module not found: Can't resolve '@/lib/auth'
-  1 | import Link from "next/link";
-  2 | import { getServerSession } from "next-auth";
-> 3 | import { authOptions } from "@/lib/auth";
-    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  4 | import dbConnect from "@/lib/db";
-  5 | import Product from "@/models/Product";
-  6 | import Order from "@/models/Order";
-
-
-
-https://nextjs.org/docs/messages/module-not-found
-
-
-
-./src/app/(admin)/layout.tsx:3:1
-Module not found: Can't resolve '@/lib/auth'
-  1 | import Link from "next/link";
-  2 | import { getServerSession } from "next-auth";
-> 3 | import { authOptions } from "@/lib/auth";
-    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  4 | import { redirect } from "next/navigation";
-  5 |
-  6 | const navLinks = [
-
-
-
-https://nextjs.org/docs/messages/module-not-found
-
-
-
-./src/app/(admin)/admin/page.tsx:4:1
-Module not found: Can't resolve '@/lib/db'
-  2 | import { getServerSession } from "next-auth";
-  3 | import { authOptions } from "@/lib/auth";
-> 4 | import dbConnect from "@/lib/db";
-    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  5 | import Product from "@/models/Product";
-  6 | import Order from "@/models/Order";
-  7 | import User from "@/models/User";
-
-
-
-https://nextjs.org/docs/messages/module-not-found
-
-
-
-./src/app/(admin)/admin/page.tsx:6:1
-Module not found: Can't resolve '@/models/Order'
-  4 | import dbConnect from "@/lib/db";
-  5 | import Product from "@/models/Product";
-> 6 | import Order from "@/models/Order";
-    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  7 | import User from "@/models/User";
-  8 |
-  9 | async function getDashboardStats() {
-
-
-
-https://nextjs.org/docs/messages/module-not-found
-
-
-
-./src/app/(admin)/admin/page.tsx:5:1
-Module not found: Can't resolve '@/models/Product'
-  3 | import { authOptions } from "@/lib/auth";
-  4 | import dbConnect from "@/lib/db";
-> 5 | import Product from "@/models/Product";
-    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  6 | import Order from "@/models/Order";
-  7 | import User from "@/models/User";
-  8 |
-
-
-
-https://nextjs.org/docs/messages/module-not-found
-
-
-
-./src/app/(admin)/admin/page.tsx:7:1
-Module not found: Can't resolve '@/models/User'
-   5 | import Product from "@/models/Product";
-   6 | import Order from "@/models/Order";
->  7 | import User from "@/models/User";
-     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-   8 |
-   9 | async function getDashboardStats() {
-  10 |     await dbConnect();
-
-
-
-https://nextjs.org/docs/messages/module-not-found
-
-
-[00:00:13.235] Server  ERROR   ⨯ ./src/app/(admin)/admin/page.tsx:3:1
-Module not found: Can't resolve '@/lib/auth'
-  1 | import Link from "next/link";
-  2 | import { getServerSession } from "next-auth";
-> 3 | import { authOptions } from "@/lib/auth";
-    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  4 | import dbConnect from "@/lib/db";
-  5 | import Product from "@/models/Product";
-  6 | import Order from "@/models/Order";
-
-
-
-https://nextjs.org/docs/messages/module-not-found
-
-
-
-./src/app/(admin)/layout.tsx:3:1
-Module not found: Can't resolve '@/lib/auth'
-  1 | import Link from "next/link";
-  2 | import { getServerSession } from "next-auth";
-> 3 | import { authOptions } from "@/lib/auth";
-    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  4 | import { redirect } from "next/navigation";
-  5 |
-  6 | const navLinks = [
-
-
-
-https://nextjs.org/docs/messages/module-not-found
-
-
-
-./src/app/(admin)/admin/page.tsx:4:1
-Module not found: Can't resolve '@/lib/db'
-  2 | import { getServerSession } from "next-auth";
-  3 | import { authOptions } from "@/lib/auth";
-> 4 | import dbConnect from "@/lib/db";
-    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  5 | import Product from "@/models/Product";
-  6 | import Order from "@/models/Order";
-  7 | import User from "@/models/User";
-
-
-
-https://nextjs.org/docs/messages/module-not-found
-
-
-
-./src/app/(admin)/admin/page.tsx:6:1
-Module not found: Can't resolve '@/models/Order'
-  4 | import dbConnect from "@/lib/db";
-  5 | import Product from "@/models/Product";
-> 6 | import Order from "@/models/Order";
-    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  7 | import User from "@/models/User";
-  8 |
-  9 | async function getDashboardStats() {
-
-
-
-https://nextjs.org/docs/messages/module-not-found
-
-
-
-./src/app/(admin)/admin/page.tsx:5:1
-Module not found: Can't resolve '@/models/Product'
-  3 | import { authOptions } from "@/lib/auth";
-  4 | import dbConnect from "@/lib/db";
-> 5 | import Product from "@/models/Product";
-    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  6 | import Order from "@/models/Order";
-  7 | import User from "@/models/User";
-  8 |
-
-
-
-https://nextjs.org/docs/messages/module-not-found
-
-
-
-./src/app/(admin)/admin/page.tsx:7:1
-Module not found: Can't resolve '@/models/User'
-   5 | import Product from "@/models/Product";
-   6 | import Order from "@/models/Order";
->  7 | import User from "@/models/User";
-     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-   8 |
-   9 | async function getDashboardStats() {
-  10 |     await dbConnect();
-
-
-
-https://nextjs.org/docs/messages/module-not-found
-
-
-[00:00:13.458] Browser ERROR   uncaughtError: Error: ./src/app/(admin)/admin/page.tsx:3:1
-Module not found: Can't resolve '@/lib/auth'
-  1 | import Link from "next/link";
-  2 | import { getServerSession } from "next-auth";
-> 3 | import { authOptions } from "@/lib/auth";
-    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  4 | import dbConnect from "@/lib/db";
-  5 | import Product from "@/models/Product";
-  6 | import Order from "@/models/Order";
-
-
-
-https://nextjs.org/docs/messages/module-not-found
-
-
-[00:00:13.665] Browser ERROR   ./src/app/(admin)/admin/page.tsx:3:1
-Module not found: Can't resolve '@/lib/auth'
-  1 | import Link from "next/link";
-  2 | import { getServerSession } from "next-auth";
-> 3 | import { authOptions } from "@/lib/auth";
-    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  4 | import dbConnect from "@/lib/db";
-  5 | import Product from "@/models/Product";
-  6 | import Order from "@/models/Order";
-
-https://nextjs.org/docs/messages/module-not-found
-[00:00:13.665] Browser ERROR   ./src/app/(admin)/layout.tsx:3:1
-Module not found: Can't resolve '@/lib/auth'
-  1 | import Link from "next/link";
-  2 | import { getServerSession } from "next-auth";
-> 3 | import { authOptions } from "@/lib/auth";
-    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  4 | import { redirect } from "next/navigation";
-  5 |
-  6 | const navLinks = [
-
-https://nextjs.org/docs/messages/module-not-found
-[00:00:13.665] Browser ERROR   ./src/app/(admin)/admin/page.tsx:4:1
-Module not found: Can't resolve '@/lib/db'
-  2 | import { getServerSession } from "next-auth";
-  3 | import { authOptions } from "@/lib/auth";
-> 4 | import dbConnect from "@/lib/db";
-    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  5 | import Product from "@/models/Product";
-  6 | import Order from "@/models/Order";
-  7 | import User from "@/models/User";
-
-https://nextjs.org/docs/messages/module-not-found
-[00:00:13.665] Browser ERROR   ./src/app/(admin)/admin/page.tsx:6:1
-Module not found: Can't resolve '@/models/Order'
-  4 | import dbConnect from "@/lib/db";
-  5 | import Product from "@/models/Product";
-> 6 | import Order from "@/models/Order";
-    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  7 | import User from "@/models/User";
-  8 |
-  9 | async function getDashboardStats() {
-
-https://nextjs.org/docs/messages/module-not-found
-[00:00:13.665] Browser ERROR   ./src/app/(admin)/admin/page.tsx:5:1
-Module not found: Can't resolve '@/models/Product'
-  3 | import { authOptions } from "@/lib/auth";
-  4 | import dbConnect from "@/lib/db";
-> 5 | import Product from "@/models/Product";
-    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  6 | import Order from "@/models/Order";
-  7 | import User from "@/models/User";
-  8 |
-
-https://nextjs.org/docs/messages/module-not-found
-[00:00:13.665] Browser ERROR   ./src/app/(admin)/admin/page.tsx:7:1
-Module not found: Can't resolve '@/models/User'
-   5 | import Product from "@/models/Product";
-   6 | import Order from "@/models/Order";
->  7 | import User from "@/models/User";
-     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-   8 |
-   9 | async function getDashboardStats() {
-  10 |     await dbConnect();
-
-https://nextjs.org/docs/messages/module-not-found
-[00:00:13.665] Browser ERROR   ./src/app/(shop)/layout.tsx:1:1
+[00:00:08.323] Browser ERROR   ./src/app/(shop)/layout.tsx:1:1
 Module not found: Can't resolve '@/components/Navbar'
 > 1 | import Navbar from "@/components/Navbar";
     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -498,7 +78,7 @@ Module not found: Can't resolve '@/components/Navbar'
   4 |     return (
 
 https://nextjs.org/docs/messages/module-not-found
-[00:00:13.665] Browser ERROR   ./src/app/(shop)/products/page.tsx:2:1
+[00:00:08.323] Browser ERROR   ./src/app/(shop)/products/page.tsx:2:1
 Module not found: Can't resolve '@/components/ProductCard'
   1 | import { Suspense } from "react";
 > 2 | import ProductCard from "@/components/ProductCard";
@@ -508,73 +88,7 @@ Module not found: Can't resolve '@/components/ProductCard'
   5 | async function getProducts(search?: string, category?: string) {
 
 https://nextjs.org/docs/messages/module-not-found
-[00:00:13.665] Browser ERROR   ./src/app/(admin)/admin/page.tsx:3:1
-Module not found: Can't resolve '@/lib/auth'
-  1 | import Link from "next/link";
-  2 | import { getServerSession } from "next-auth";
-> 3 | import { authOptions } from "@/lib/auth";
-    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  4 | import dbConnect from "@/lib/db";
-  5 | import Product from "@/models/Product";
-  6 | import Order from "@/models/Order";
-
-https://nextjs.org/docs/messages/module-not-found
-[00:00:13.665] Browser ERROR   ./src/app/(admin)/layout.tsx:3:1
-Module not found: Can't resolve '@/lib/auth'
-  1 | import Link from "next/link";
-  2 | import { getServerSession } from "next-auth";
-> 3 | import { authOptions } from "@/lib/auth";
-    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  4 | import { redirect } from "next/navigation";
-  5 |
-  6 | const navLinks = [
-
-https://nextjs.org/docs/messages/module-not-found
-[00:00:13.665] Browser ERROR   ./src/app/(admin)/admin/page.tsx:4:1
-Module not found: Can't resolve '@/lib/db'
-  2 | import { getServerSession } from "next-auth";
-  3 | import { authOptions } from "@/lib/auth";
-> 4 | import dbConnect from "@/lib/db";
-    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  5 | import Product from "@/models/Product";
-  6 | import Order from "@/models/Order";
-  7 | import User from "@/models/User";
-
-https://nextjs.org/docs/messages/module-not-found
-[00:00:13.665] Browser ERROR   ./src/app/(admin)/admin/page.tsx:6:1
-Module not found: Can't resolve '@/models/Order'
-  4 | import dbConnect from "@/lib/db";
-  5 | import Product from "@/models/Product";
-> 6 | import Order from "@/models/Order";
-    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  7 | import User from "@/models/User";
-  8 |
-  9 | async function getDashboardStats() {
-
-https://nextjs.org/docs/messages/module-not-found
-[00:00:13.665] Browser ERROR   ./src/app/(admin)/admin/page.tsx:5:1
-Module not found: Can't resolve '@/models/Product'
-  3 | import { authOptions } from "@/lib/auth";
-  4 | import dbConnect from "@/lib/db";
-> 5 | import Product from "@/models/Product";
-    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  6 | import Order from "@/models/Order";
-  7 | import User from "@/models/User";
-  8 |
-
-https://nextjs.org/docs/messages/module-not-found
-[00:00:13.665] Browser ERROR   ./src/app/(admin)/admin/page.tsx:7:1
-Module not found: Can't resolve '@/models/User'
-   5 | import Product from "@/models/Product";
-   6 | import Order from "@/models/Order";
->  7 | import User from "@/models/User";
-     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-   8 |
-   9 | async function getDashboardStats() {
-  10 |     await dbConnect();
-
-https://nextjs.org/docs/messages/module-not-found
-[00:00:13.665] Browser ERROR   ./src/app/(shop)/layout.tsx:1:1
+[00:00:08.323] Browser ERROR   ./src/app/(shop)/layout.tsx:1:1
 Module not found: Can't resolve '@/components/Navbar'
 > 1 | import Navbar from "@/components/Navbar";
     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -583,7 +97,7 @@ Module not found: Can't resolve '@/components/Navbar'
   4 |     return (
 
 https://nextjs.org/docs/messages/module-not-found
-[00:00:13.665] Browser ERROR   ./src/app/(shop)/products/page.tsx:2:1
+[00:00:08.323] Browser ERROR   ./src/app/(shop)/products/page.tsx:2:1
 Module not found: Can't resolve '@/components/ProductCard'
   1 | import { Suspense } from "react";
 > 2 | import ProductCard from "@/components/ProductCard";
@@ -593,88 +107,20 @@ Module not found: Can't resolve '@/components/ProductCard'
   5 | async function getProducts(search?: string, category?: string) {
 
 https://nextjs.org/docs/messages/module-not-found
-[00:00:15.155] Browser ERROR   uncaughtError: Error: ./src/app/(admin)/admin/page.tsx:3:1
-Module not found: Can't resolve '@/lib/auth'
-  1 | import Link from "next/link";
-  2 | import { getServerSession } from "next-auth";
-> 3 | import { authOptions } from "@/lib/auth";
+[00:00:09.745] Browser ERROR   uncaughtError: Error: ./src/app/(shop)/layout.tsx:1:1
+Module not found: Can't resolve '@/components/Navbar'
+> 1 | import Navbar from "@/components/Navbar";
     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  4 | import dbConnect from "@/lib/db";
-  5 | import Product from "@/models/Product";
-  6 | import Order from "@/models/Order";
+  2 |
+  3 | export default function ShopLayout({ children }: { children: React.ReactNode }) {
+  4 |     return (
 
 
 
 https://nextjs.org/docs/messages/module-not-found
 
 
-[00:00:15.310] Browser ERROR   ./src/app/(admin)/admin/page.tsx:3:1
-Module not found: Can't resolve '@/lib/auth'
-  1 | import Link from "next/link";
-  2 | import { getServerSession } from "next-auth";
-> 3 | import { authOptions } from "@/lib/auth";
-    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  4 | import dbConnect from "@/lib/db";
-  5 | import Product from "@/models/Product";
-  6 | import Order from "@/models/Order";
-
-https://nextjs.org/docs/messages/module-not-found
-[00:00:15.310] Browser ERROR   ./src/app/(admin)/layout.tsx:3:1
-Module not found: Can't resolve '@/lib/auth'
-  1 | import Link from "next/link";
-  2 | import { getServerSession } from "next-auth";
-> 3 | import { authOptions } from "@/lib/auth";
-    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  4 | import { redirect } from "next/navigation";
-  5 |
-  6 | const navLinks = [
-
-https://nextjs.org/docs/messages/module-not-found
-[00:00:15.310] Browser ERROR   ./src/app/(admin)/admin/page.tsx:4:1
-Module not found: Can't resolve '@/lib/db'
-  2 | import { getServerSession } from "next-auth";
-  3 | import { authOptions } from "@/lib/auth";
-> 4 | import dbConnect from "@/lib/db";
-    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  5 | import Product from "@/models/Product";
-  6 | import Order from "@/models/Order";
-  7 | import User from "@/models/User";
-
-https://nextjs.org/docs/messages/module-not-found
-[00:00:15.310] Browser ERROR   ./src/app/(admin)/admin/page.tsx:6:1
-Module not found: Can't resolve '@/models/Order'
-  4 | import dbConnect from "@/lib/db";
-  5 | import Product from "@/models/Product";
-> 6 | import Order from "@/models/Order";
-    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  7 | import User from "@/models/User";
-  8 |
-  9 | async function getDashboardStats() {
-
-https://nextjs.org/docs/messages/module-not-found
-[00:00:15.310] Browser ERROR   ./src/app/(admin)/admin/page.tsx:5:1
-Module not found: Can't resolve '@/models/Product'
-  3 | import { authOptions } from "@/lib/auth";
-  4 | import dbConnect from "@/lib/db";
-> 5 | import Product from "@/models/Product";
-    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  6 | import Order from "@/models/Order";
-  7 | import User from "@/models/User";
-  8 |
-
-https://nextjs.org/docs/messages/module-not-found
-[00:00:15.310] Browser ERROR   ./src/app/(admin)/admin/page.tsx:7:1
-Module not found: Can't resolve '@/models/User'
-   5 | import Product from "@/models/Product";
-   6 | import Order from "@/models/Order";
->  7 | import User from "@/models/User";
-     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-   8 |
-   9 | async function getDashboardStats() {
-  10 |     await dbConnect();
-
-https://nextjs.org/docs/messages/module-not-found
-[00:00:15.310] Browser ERROR   ./src/app/(shop)/layout.tsx:1:1
+[00:00:09.912] Browser ERROR   ./src/app/(shop)/layout.tsx:1:1
 Module not found: Can't resolve '@/components/Navbar'
 > 1 | import Navbar from "@/components/Navbar";
     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -683,7 +129,7 @@ Module not found: Can't resolve '@/components/Navbar'
   4 |     return (
 
 https://nextjs.org/docs/messages/module-not-found
-[00:00:15.310] Browser ERROR   ./src/app/(shop)/products/page.tsx:2:1
+[00:00:09.912] Browser ERROR   ./src/app/(shop)/products/page.tsx:2:1
 Module not found: Can't resolve '@/components/ProductCard'
   1 | import { Suspense } from "react";
 > 2 | import ProductCard from "@/components/ProductCard";
@@ -693,73 +139,7 @@ Module not found: Can't resolve '@/components/ProductCard'
   5 | async function getProducts(search?: string, category?: string) {
 
 https://nextjs.org/docs/messages/module-not-found
-[00:00:15.311] Browser ERROR   ./src/app/(admin)/admin/page.tsx:3:1
-Module not found: Can't resolve '@/lib/auth'
-  1 | import Link from "next/link";
-  2 | import { getServerSession } from "next-auth";
-> 3 | import { authOptions } from "@/lib/auth";
-    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  4 | import dbConnect from "@/lib/db";
-  5 | import Product from "@/models/Product";
-  6 | import Order from "@/models/Order";
-
-https://nextjs.org/docs/messages/module-not-found
-[00:00:15.311] Browser ERROR   ./src/app/(admin)/layout.tsx:3:1
-Module not found: Can't resolve '@/lib/auth'
-  1 | import Link from "next/link";
-  2 | import { getServerSession } from "next-auth";
-> 3 | import { authOptions } from "@/lib/auth";
-    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  4 | import { redirect } from "next/navigation";
-  5 |
-  6 | const navLinks = [
-
-https://nextjs.org/docs/messages/module-not-found
-[00:00:15.311] Browser ERROR   ./src/app/(admin)/admin/page.tsx:4:1
-Module not found: Can't resolve '@/lib/db'
-  2 | import { getServerSession } from "next-auth";
-  3 | import { authOptions } from "@/lib/auth";
-> 4 | import dbConnect from "@/lib/db";
-    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  5 | import Product from "@/models/Product";
-  6 | import Order from "@/models/Order";
-  7 | import User from "@/models/User";
-
-https://nextjs.org/docs/messages/module-not-found
-[00:00:15.311] Browser ERROR   ./src/app/(admin)/admin/page.tsx:6:1
-Module not found: Can't resolve '@/models/Order'
-  4 | import dbConnect from "@/lib/db";
-  5 | import Product from "@/models/Product";
-> 6 | import Order from "@/models/Order";
-    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  7 | import User from "@/models/User";
-  8 |
-  9 | async function getDashboardStats() {
-
-https://nextjs.org/docs/messages/module-not-found
-[00:00:15.311] Browser ERROR   ./src/app/(admin)/admin/page.tsx:5:1
-Module not found: Can't resolve '@/models/Product'
-  3 | import { authOptions } from "@/lib/auth";
-  4 | import dbConnect from "@/lib/db";
-> 5 | import Product from "@/models/Product";
-    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  6 | import Order from "@/models/Order";
-  7 | import User from "@/models/User";
-  8 |
-
-https://nextjs.org/docs/messages/module-not-found
-[00:00:15.311] Browser ERROR   ./src/app/(admin)/admin/page.tsx:7:1
-Module not found: Can't resolve '@/models/User'
-   5 | import Product from "@/models/Product";
-   6 | import Order from "@/models/Order";
->  7 | import User from "@/models/User";
-     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-   8 |
-   9 | async function getDashboardStats() {
-  10 |     await dbConnect();
-
-https://nextjs.org/docs/messages/module-not-found
-[00:00:15.311] Browser ERROR   ./src/app/(shop)/layout.tsx:1:1
+[00:00:09.912] Browser ERROR   ./src/app/(shop)/layout.tsx:1:1
 Module not found: Can't resolve '@/components/Navbar'
 > 1 | import Navbar from "@/components/Navbar";
     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -768,7 +148,7 @@ Module not found: Can't resolve '@/components/Navbar'
   4 |     return (
 
 https://nextjs.org/docs/messages/module-not-found
-[00:00:15.311] Browser ERROR   ./src/app/(shop)/products/page.tsx:2:1
+[00:00:09.912] Browser ERROR   ./src/app/(shop)/products/page.tsx:2:1
 Module not found: Can't resolve '@/components/ProductCard'
   1 | import { Suspense } from "react";
 > 2 | import ProductCard from "@/components/ProductCard";
@@ -778,73 +158,20 @@ Module not found: Can't resolve '@/components/ProductCard'
   5 | async function getProducts(search?: string, category?: string) {
 
 https://nextjs.org/docs/messages/module-not-found
-[00:00:21.335] Browser ERROR   ./src/app/(admin)/admin/page.tsx:3:1
-Module not found: Can't resolve '@/lib/auth'
-  1 | import Link from "next/link";
-  2 | import { getServerSession } from "next-auth";
-> 3 | import { authOptions } from "@/lib/auth";
+[00:00:10.933] Browser ERROR   uncaughtError: Error: ./src/app/(shop)/layout.tsx:1:1
+Module not found: Can't resolve '@/components/Navbar'
+> 1 | import Navbar from "@/components/Navbar";
     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  4 | import dbConnect from "@/lib/db";
-  5 | import Product from "@/models/Product";
-  6 | import Order from "@/models/Order";
+  2 |
+  3 | export default function ShopLayout({ children }: { children: React.ReactNode }) {
+  4 |     return (
+
+
 
 https://nextjs.org/docs/messages/module-not-found
-[00:00:21.335] Browser ERROR   ./src/app/(admin)/layout.tsx:3:1
-Module not found: Can't resolve '@/lib/auth'
-  1 | import Link from "next/link";
-  2 | import { getServerSession } from "next-auth";
-> 3 | import { authOptions } from "@/lib/auth";
-    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  4 | import { redirect } from "next/navigation";
-  5 |
-  6 | const navLinks = [
 
-https://nextjs.org/docs/messages/module-not-found
-[00:00:21.335] Browser ERROR   ./src/app/(admin)/admin/page.tsx:4:1
-Module not found: Can't resolve '@/lib/db'
-  2 | import { getServerSession } from "next-auth";
-  3 | import { authOptions } from "@/lib/auth";
-> 4 | import dbConnect from "@/lib/db";
-    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  5 | import Product from "@/models/Product";
-  6 | import Order from "@/models/Order";
-  7 | import User from "@/models/User";
 
-https://nextjs.org/docs/messages/module-not-found
-[00:00:21.335] Browser ERROR   ./src/app/(admin)/admin/page.tsx:6:1
-Module not found: Can't resolve '@/models/Order'
-  4 | import dbConnect from "@/lib/db";
-  5 | import Product from "@/models/Product";
-> 6 | import Order from "@/models/Order";
-    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  7 | import User from "@/models/User";
-  8 |
-  9 | async function getDashboardStats() {
-
-https://nextjs.org/docs/messages/module-not-found
-[00:00:21.335] Browser ERROR   ./src/app/(admin)/admin/page.tsx:5:1
-Module not found: Can't resolve '@/models/Product'
-  3 | import { authOptions } from "@/lib/auth";
-  4 | import dbConnect from "@/lib/db";
-> 5 | import Product from "@/models/Product";
-    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  6 | import Order from "@/models/Order";
-  7 | import User from "@/models/User";
-  8 |
-
-https://nextjs.org/docs/messages/module-not-found
-[00:00:21.335] Browser ERROR   ./src/app/(admin)/admin/page.tsx:7:1
-Module not found: Can't resolve '@/models/User'
-   5 | import Product from "@/models/Product";
-   6 | import Order from "@/models/Order";
->  7 | import User from "@/models/User";
-     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-   8 |
-   9 | async function getDashboardStats() {
-  10 |     await dbConnect();
-
-https://nextjs.org/docs/messages/module-not-found
-[00:00:21.335] Browser ERROR   ./src/app/(shop)/layout.tsx:1:1
+[00:00:11.089] Browser ERROR   ./src/app/(shop)/layout.tsx:1:1
 Module not found: Can't resolve '@/components/Navbar'
 > 1 | import Navbar from "@/components/Navbar";
     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -853,7 +180,179 @@ Module not found: Can't resolve '@/components/Navbar'
   4 |     return (
 
 https://nextjs.org/docs/messages/module-not-found
-[00:00:21.336] Browser ERROR   ./src/app/(shop)/products/page.tsx:2:1
+[00:00:11.089] Browser ERROR   ./src/app/(shop)/products/page.tsx:2:1
+Module not found: Can't resolve '@/components/ProductCard'
+  1 | import { Suspense } from "react";
+> 2 | import ProductCard from "@/components/ProductCard";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 | import ProductSkeleton from "@/components/ProductSkeleton";
+  4 |
+  5 | async function getProducts(search?: string, category?: string) {
+
+https://nextjs.org/docs/messages/module-not-found
+[00:00:11.089] Browser ERROR   ./src/app/(shop)/layout.tsx:1:1
+Module not found: Can't resolve '@/components/Navbar'
+> 1 | import Navbar from "@/components/Navbar";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 |
+  3 | export default function ShopLayout({ children }: { children: React.ReactNode }) {
+  4 |     return (
+
+https://nextjs.org/docs/messages/module-not-found
+[00:00:11.089] Browser ERROR   ./src/app/(shop)/products/page.tsx:2:1
+Module not found: Can't resolve '@/components/ProductCard'
+  1 | import { Suspense } from "react";
+> 2 | import ProductCard from "@/components/ProductCard";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 | import ProductSkeleton from "@/components/ProductSkeleton";
+  4 |
+  5 | async function getProducts(search?: string, category?: string) {
+
+https://nextjs.org/docs/messages/module-not-found
+[00:00:11.580] Browser ERROR   uncaughtError: Error: ./src/app/(shop)/layout.tsx:1:1
+Module not found: Can't resolve '@/components/Navbar'
+> 1 | import Navbar from "@/components/Navbar";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 |
+  3 | export default function ShopLayout({ children }: { children: React.ReactNode }) {
+  4 |     return (
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:00:11.696] Browser ERROR   ./src/app/(shop)/layout.tsx:1:1
+Module not found: Can't resolve '@/components/Navbar'
+> 1 | import Navbar from "@/components/Navbar";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 |
+  3 | export default function ShopLayout({ children }: { children: React.ReactNode }) {
+  4 |     return (
+
+https://nextjs.org/docs/messages/module-not-found
+[00:00:11.696] Browser ERROR   ./src/app/(shop)/products/page.tsx:2:1
+Module not found: Can't resolve '@/components/ProductCard'
+  1 | import { Suspense } from "react";
+> 2 | import ProductCard from "@/components/ProductCard";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 | import ProductSkeleton from "@/components/ProductSkeleton";
+  4 |
+  5 | async function getProducts(search?: string, category?: string) {
+
+https://nextjs.org/docs/messages/module-not-found
+[00:00:11.696] Browser ERROR   ./src/app/(shop)/layout.tsx:1:1
+Module not found: Can't resolve '@/components/Navbar'
+> 1 | import Navbar from "@/components/Navbar";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 |
+  3 | export default function ShopLayout({ children }: { children: React.ReactNode }) {
+  4 |     return (
+
+https://nextjs.org/docs/messages/module-not-found
+[00:00:11.696] Browser ERROR   ./src/app/(shop)/products/page.tsx:2:1
+Module not found: Can't resolve '@/components/ProductCard'
+  1 | import { Suspense } from "react";
+> 2 | import ProductCard from "@/components/ProductCard";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 | import ProductSkeleton from "@/components/ProductSkeleton";
+  4 |
+  5 | async function getProducts(search?: string, category?: string) {
+
+https://nextjs.org/docs/messages/module-not-found
+[00:00:11.817] Browser ERROR   uncaughtError: Error: ./src/app/(shop)/layout.tsx:1:1
+Module not found: Can't resolve '@/components/Navbar'
+> 1 | import Navbar from "@/components/Navbar";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 |
+  3 | export default function ShopLayout({ children }: { children: React.ReactNode }) {
+  4 |     return (
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:00:11.937] Browser ERROR   ./src/app/(shop)/layout.tsx:1:1
+Module not found: Can't resolve '@/components/Navbar'
+> 1 | import Navbar from "@/components/Navbar";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 |
+  3 | export default function ShopLayout({ children }: { children: React.ReactNode }) {
+  4 |     return (
+
+https://nextjs.org/docs/messages/module-not-found
+[00:00:11.937] Browser ERROR   ./src/app/(shop)/products/page.tsx:2:1
+Module not found: Can't resolve '@/components/ProductCard'
+  1 | import { Suspense } from "react";
+> 2 | import ProductCard from "@/components/ProductCard";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 | import ProductSkeleton from "@/components/ProductSkeleton";
+  4 |
+  5 | async function getProducts(search?: string, category?: string) {
+
+https://nextjs.org/docs/messages/module-not-found
+[00:00:11.937] Browser ERROR   ./src/app/(shop)/layout.tsx:1:1
+Module not found: Can't resolve '@/components/Navbar'
+> 1 | import Navbar from "@/components/Navbar";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 |
+  3 | export default function ShopLayout({ children }: { children: React.ReactNode }) {
+  4 |     return (
+
+https://nextjs.org/docs/messages/module-not-found
+[00:00:11.937] Browser ERROR   ./src/app/(shop)/products/page.tsx:2:1
+Module not found: Can't resolve '@/components/ProductCard'
+  1 | import { Suspense } from "react";
+> 2 | import ProductCard from "@/components/ProductCard";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 | import ProductSkeleton from "@/components/ProductSkeleton";
+  4 |
+  5 | async function getProducts(search?: string, category?: string) {
+
+https://nextjs.org/docs/messages/module-not-found
+[00:00:12.055] Browser ERROR   uncaughtError: Error: ./src/app/(shop)/layout.tsx:1:1
+Module not found: Can't resolve '@/components/Navbar'
+> 1 | import Navbar from "@/components/Navbar";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 |
+  3 | export default function ShopLayout({ children }: { children: React.ReactNode }) {
+  4 |     return (
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:00:12.195] Browser ERROR   ./src/app/(shop)/layout.tsx:1:1
+Module not found: Can't resolve '@/components/Navbar'
+> 1 | import Navbar from "@/components/Navbar";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 |
+  3 | export default function ShopLayout({ children }: { children: React.ReactNode }) {
+  4 |     return (
+
+https://nextjs.org/docs/messages/module-not-found
+[00:00:12.195] Browser ERROR   ./src/app/(shop)/products/page.tsx:2:1
+Module not found: Can't resolve '@/components/ProductCard'
+  1 | import { Suspense } from "react";
+> 2 | import ProductCard from "@/components/ProductCard";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 | import ProductSkeleton from "@/components/ProductSkeleton";
+  4 |
+  5 | async function getProducts(search?: string, category?: string) {
+
+https://nextjs.org/docs/messages/module-not-found
+[00:00:12.195] Browser ERROR   ./src/app/(shop)/layout.tsx:1:1
+Module not found: Can't resolve '@/components/Navbar'
+> 1 | import Navbar from "@/components/Navbar";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 |
+  3 | export default function ShopLayout({ children }: { children: React.ReactNode }) {
+  4 |     return (
+
+https://nextjs.org/docs/messages/module-not-found
+[00:00:12.195] Browser ERROR   ./src/app/(shop)/products/page.tsx:2:1
 Module not found: Can't resolve '@/components/ProductCard'
   1 | import { Suspense } from "react";
 > 2 | import ProductCard from "@/components/ProductCard";
