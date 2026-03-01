@@ -1,40 +1,31 @@
-import { Suspense } from "react";
-import ProductCard from "@/components/ProductCard";
-import ProductSkeleton from "@/components/ProductSkeleton";
+import { ProductCard } from "@/components/ProductCard";
 
-async function getProducts(search?: string, category?: string) {
-    const params = new URLSearchParams();
-    if (search) params.set("search", search);
-    if (category) params.set("category", category);
+export default async function ProductsPage({ searchParams }: any) {
+    const q = searchParams?.q ? `q=${encodeURIComponent(searchParams.q)}` : "";
+    const url = `${process.env.NEXTAUTH_URL}/api/products${q ? `?${q}` : ""}`;
 
-    const res = await fetch(
-        `${process.env.NEXT_PUBLIC_BASE_URL}/api/products?${params.toString()}`,
-        { cache: "no-store" }
-    );
-    const data = await res.json();
-    return data.products ?? [];
-}
-
-interface Props {
-    searchParams: { search?: string; category?: string };
-}
-
-export default async function ProductsPage({ searchParams }: Props) {
-    const products = await getProducts(searchParams.search, searchParams.category);
+    const res = await fetch(url, { cache: "no-store" });
+    const products = await res.json();
 
     return (
-        <main className="container mx-auto px-4 py-10">
-            <h1 className="text-3xl font-bold mb-8">All Products</h1>
+        <main className="max-w-6xl mx-auto p-4">
+            <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-3">
+                <h1 className="text-2xl font-bold">Products</h1>
 
-            {products.length === 0 ? (
-                <p className="text-gray-500 text-center py-20">No products found.</p>
-            ) : (
-                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-                    {products.map((product: any) => (
-                        <ProductCard key={product._id} product={product} />
-                    ))}
-                </div>
-            )}
+                <form className="flex gap-2" action="/products" method="get">
+                    <input
+                        name="q"
+                        defaultValue={searchParams?.q ?? ""}
+                        placeholder="Search name or category..."
+                        className="border rounded px-3 py-2 w-full md:w-80"
+                    />
+                    <button className="border rounded px-4">Search</button>
+                </form>
+            </div>
+
+            <div className="mt-6 grid grid-cols-2 md:grid-cols-4 gap-4">
+                {products.map((p: any) => <ProductCard key={p._id} p={p} />)}
+            </div>
         </main>
     );
 }

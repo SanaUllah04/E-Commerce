@@ -1,34 +1,25 @@
 import { NextResponse } from "next/server";
-import dbConnect from "@/lib/db";
-import Product from "@/models/Product";
+import { dbConnect } from "@/app/lib/db";
+import { Product } from "@/models/Product";
 
-// GET /api/products/[id]
 export async function GET(_: Request, { params }: { params: { id: string } }) {
     await dbConnect();
     const product = await Product.findById(params.id);
-    if (!product) {
-        return NextResponse.json({ success: false, error: "Product not found" }, { status: 404 });
-    }
-    return NextResponse.json({ success: true, product });
+    if (!product) return NextResponse.json({ message: "Not found" }, { status: 404 });
+    return NextResponse.json(product);
 }
 
-// PUT /api/products/[id]
-export async function PUT(request: Request, { params }: { params: { id: string } }) {
+export async function PUT(req: Request, { params }: { params: { id: string } }) {
     await dbConnect();
-    const body = await request.json();
-    const product = await Product.findByIdAndUpdate(params.id, body, { new: true, runValidators: true });
-    if (!product) {
-        return NextResponse.json({ success: false, error: "Product not found" }, { status: 404 });
-    }
-    return NextResponse.json({ success: true, product });
+    const body = await req.json();
+    const updated = await Product.findByIdAndUpdate(params.id, body, { new: true });
+    if (!updated) return NextResponse.json({ message: "Not found" }, { status: 404 });
+    return NextResponse.json(updated);
 }
 
-// DELETE /api/products/[id]
 export async function DELETE(_: Request, { params }: { params: { id: string } }) {
     await dbConnect();
-    const product = await Product.findByIdAndDelete(params.id);
-    if (!product) {
-        return NextResponse.json({ success: false, error: "Product not found" }, { status: 404 });
-    }
-    return NextResponse.json({ success: true, message: "Product deleted" });
+    const deleted = await Product.findByIdAndDelete(params.id);
+    if (!deleted) return NextResponse.json({ message: "Not found" }, { status: 404 });
+    return NextResponse.json({ ok: true });
 }

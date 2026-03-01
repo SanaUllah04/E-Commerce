@@ -1,11 +1,11 @@
 "use client";
 
 import Link from "next/link";
-import { useCartStore } from "@/store/cartStore";
+import { useCart } from "@/store/cartStore";
 import { useSession, signOut } from "next-auth/react";
 
 export default function Navbar() {
-    const totalItems = useCartStore((s) => s.totalItems);
+    const totalItems = useCart((s) => s.totalItems);
     const { data: session } = useSession();
     const isAdmin = (session?.user as any)?.role === "admin";
 

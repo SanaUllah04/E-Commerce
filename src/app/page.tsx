@@ -14,7 +14,7 @@ export default function HomePage() {
                     href="/products"
                     className="bg-indigo-600 text-white px-8 py-3 rounded-xl font-semibold hover:bg-indigo-700 transition-colors shadow-lg shadow-indigo-200"
                 >
-                    Nigga Move U bitch
+                    Shop Now
                 </Link>
                 <Link
                     href="/admin"
