@@ -1,8 +1,8 @@
 import { NextResponse } from "next/server";
 import { getServerSession } from "next-auth";
-import { authOptions } from "@/lib/auth";
-import dbConnect from "@/lib/db";
-import Order from "@/models/Order";
+import { authOptions } from "@/app/lib/auth";
+import { dbConnect } from "@/app/lib/db";
+import { Order } from "@/models/Order";
 
 // GET /api/cart — get current user's latest cart/orders
 export async function GET() {

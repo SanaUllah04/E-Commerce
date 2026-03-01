@@ -133,11 +133,17 @@ async function dbConnect() {
 
 __turbopack_context__.s([
     "User",
-    ()=>User
+    ()=>User,
+    "default",
+    ()=>__TURBOPACK__default__export__
 ]);
 var __TURBOPACK__imported__module__$5b$externals$5d2f$mongoose__$5b$external$5d$__$28$mongoose$2c$__cjs$2c$__$5b$project$5d2f$node_modules$2f$mongoose$29$__ = __turbopack_context__.i("[externals]/mongoose [external] (mongoose, cjs, [project]/node_modules/mongoose)");
 ;
 const UserSchema = new __TURBOPACK__imported__module__$5b$externals$5d2f$mongoose__$5b$external$5d$__$28$mongoose$2c$__cjs$2c$__$5b$project$5d2f$node_modules$2f$mongoose$29$__["Schema"]({
+    name: {
+        type: String,
+        trim: true
+    },
     email: {
         type: String,
         required: true,
@@ -145,22 +151,24 @@ const UserSchema = new __TURBOPACK__imported__module__$5b$externals$5d2f$mongoos
         lowercase: true,
         trim: true
     },
-    passwordHash: {
+    password: {
         type: String,
         required: true
     },
     role: {
         type: String,
         enum: [
-            "user",
-            "admin"
+            "admin",
+            "partner",
+            "customer"
         ],
-        default: "user"
+        default: "customer"
     }
 }, {
     timestamps: true
 });
 const User = __TURBOPACK__imported__module__$5b$externals$5d2f$mongoose__$5b$external$5d$__$28$mongoose$2c$__cjs$2c$__$5b$project$5d2f$node_modules$2f$mongoose$29$__["models"].User || (0, __TURBOPACK__imported__module__$5b$externals$5d2f$mongoose__$5b$external$5d$__$28$mongoose$2c$__cjs$2c$__$5b$project$5d2f$node_modules$2f$mongoose$29$__["model"])("User", UserSchema);
+const __TURBOPACK__default__export__ = User;
 }),
 "[project]/src/app/lib/auth.ts [app-route] (ecmascript)", ((__turbopack_context__) => {
 "use strict";
@@ -198,7 +206,7 @@ const authOptions = {
                     email: credentials.email
                 });
                 if (!user) return null;
-                const isValid = await __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$bcryptjs$2f$index$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["default"].compare(credentials.password, user.passwordHash);
+                const isValid = await __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$bcryptjs$2f$index$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["default"].compare(credentials.password, user.password);
                 if (!isValid) return null;
                 return {
                     id: user._id.toString(),

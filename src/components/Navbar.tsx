@@ -10,58 +10,60 @@ export default function Navbar() {
     const isAdmin = (session?.user as any)?.role === "admin";
 
     return (
-        <nav className="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-100 shadow-sm">
-            <div className="container mx-auto px-4 h-16 flex items-center justify-between">
-                {/* Logo */}
-                <Link href="/" className="text-xl font-extrabold text-indigo-600 tracking-tight">
-                    ShopNow
-                </Link>
-
-                {/* Nav Links */}
-                <div className="flex items-center gap-6 text-sm font-medium text-gray-600">
-                    <Link href="/products" className="hover:text-indigo-600 transition-colors">
-                        Products
+        <nav className="fixed top-0 left-0 right-0 z-[100] transition-all duration-300">
+            <div className="container mx-auto px-6 py-4">
+                <div className="flex items-center justify-between px-6 py-3 rounded-2xl glass-dark border border-white/10 shadow-2xl">
+                    {/* Logo */}
+                    <Link href="/" className="text-2xl font-black text-white tracking-tighter hover:scale-105 transition-transform">
+                        SHOP<span className="text-indigo-500">NOW</span>
                     </Link>
-                    {isAdmin && (
-                        <Link href="/admin" className="hover:text-indigo-600 transition-colors">
-                            Admin
-                        </Link>
-                    )}
-                </div>
 
-                {/* Right Actions */}
-                <div className="flex items-center gap-4">
-                    {/* Cart */}
-                    <Link href="/cart" className="relative p-2 hover:text-indigo-600 transition-colors">
-                        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
-                        </svg>
-                        {totalItems() > 0 && (
-                            <span className="absolute -top-1 -right-1 w-5 h-5 bg-indigo-600 text-white text-xs rounded-full flex items-center justify-center font-bold">
-                                {totalItems()}
-                            </span>
+                    {/* Nav Links */}
+                    <div className="hidden md:flex items-center gap-8 text-sm font-bold text-slate-300 tracking-widest uppercase">
+                        <Link href="/products" className="hover:text-white transition-colors">
+                            Products
+                        </Link>
+                        {isAdmin && (
+                            <Link href="/admin" className="hover:text-white transition-colors">
+                                Admin
+                            </Link>
                         )}
-                    </Link>
+                    </div>
 
-                    {/* Auth */}
-                    {session ? (
-                        <div className="flex items-center gap-3">
-                            <span className="text-sm text-gray-600 hidden sm:block">{session.user?.name}</span>
-                            <button
-                                onClick={() => signOut()}
-                                className="text-sm text-red-500 hover:text-red-700 transition-colors"
-                            >
-                                Sign Out
-                            </button>
-                        </div>
-                    ) : (
-                        <Link
-                            href="/login"
-                            className="bg-indigo-600 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-indigo-700 transition-colors"
-                        >
-                            Sign In
+                    {/* Right Actions */}
+                    <div className="flex items-center gap-6">
+                        {/* Cart */}
+                        <Link href="/cart" className="relative p-2 text-slate-300 hover:text-white transition-all hover:scale-110">
+                            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+                            </svg>
+                            {totalItems() > 0 && (
+                                <span className="absolute -top-1 -right-1 w-5 h-5 bg-indigo-500 text-white text-[10px] rounded-full flex items-center justify-center font-black shadow-lg shadow-indigo-500/50">
+                                    {totalItems()}
+                                </span>
+                            )}
                         </Link>
-                    )}
+
+                        {/* Auth */}
+                        {session ? (
+                            <div className="flex items-center gap-4">
+                                <span className="text-xs font-bold text-slate-400 hidden sm:block uppercase tracking-wider">{session.user?.email?.split('@')[0]}</span>
+                                <button
+                                    onClick={() => signOut()}
+                                    className="px-4 py-2 rounded-xl bg-white/5 text-xs font-bold text-white border border-white/10 hover:bg-red-500/20 hover:border-red-500/40 transition-all"
+                                >
+                                    LOGOUT
+                                </button>
+                            </div>
+                        ) : (
+                            <Link
+                                href="/login"
+                                className="px-6 py-2 rounded-xl bg-white text-slate-950 text-xs font-black uppercase tracking-widest hover:bg-slate-200 transition-colors shadow-lg"
+                            >
+                                Sign In
+                            </Link>
+                        )}
+                    </div>
                 </div>
             </div>
         </nav>

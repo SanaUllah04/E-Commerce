@@ -14,3 +14,4 @@ const ProductSchema = new Schema(
 );
 
 export const Product: Model<any> = models.Product || model("Product", ProductSchema);
+export default Product;

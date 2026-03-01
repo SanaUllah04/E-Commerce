@@ -19,7 +19,7 @@ export const authOptions: NextAuthOptions = {
                 const user = await User.findOne({ email: credentials.email });
                 if (!user) return null;
 
-                const isValid = await bcrypt.compare(credentials.password, user.passwordHash);
+                const isValid = await bcrypt.compare(credentials.password, user.password);
                 if (!isValid) return null;
 
                 return {
