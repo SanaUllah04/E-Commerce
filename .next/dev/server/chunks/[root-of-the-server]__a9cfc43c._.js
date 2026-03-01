@@ -73,7 +73,9 @@ async function dbConnect() {
 
 __turbopack_context__.s([
     "Product",
-    ()=>Product
+    ()=>Product,
+    "default",
+    ()=>__TURBOPACK__default__export__
 ]);
 var __TURBOPACK__imported__module__$5b$externals$5d2f$mongoose__$5b$external$5d$__$28$mongoose$2c$__cjs$2c$__$5b$project$5d2f$node_modules$2f$mongoose$29$__ = __turbopack_context__.i("[externals]/mongoose [external] (mongoose, cjs, [project]/node_modules/mongoose)");
 ;
@@ -114,6 +116,7 @@ const ProductSchema = new __TURBOPACK__imported__module__$5b$externals$5d2f$mong
     timestamps: true
 });
 const Product = __TURBOPACK__imported__module__$5b$externals$5d2f$mongoose__$5b$external$5d$__$28$mongoose$2c$__cjs$2c$__$5b$project$5d2f$node_modules$2f$mongoose$29$__["models"].Product || (0, __TURBOPACK__imported__module__$5b$externals$5d2f$mongoose__$5b$external$5d$__$28$mongoose$2c$__cjs$2c$__$5b$project$5d2f$node_modules$2f$mongoose$29$__["model"])("Product", ProductSchema);
+const __TURBOPACK__default__export__ = Product;
 }),
 "[project]/src/app/api/products/route.ts [app-route] (ecmascript)", ((__turbopack_context__) => {
 "use strict";

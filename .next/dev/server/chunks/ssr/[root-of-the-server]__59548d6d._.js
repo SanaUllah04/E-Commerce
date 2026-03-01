@@ -18,7 +18,9 @@ __turbopack_context__.n(__turbopack_context__.i("[project]/src/app/(admin)/layou
 
 __turbopack_context__.s([
     "Product",
-    ()=>Product
+    ()=>Product,
+    "default",
+    ()=>__TURBOPACK__default__export__
 ]);
 var __TURBOPACK__imported__module__$5b$externals$5d2f$mongoose__$5b$external$5d$__$28$mongoose$2c$__cjs$2c$__$5b$project$5d2f$node_modules$2f$mongoose$29$__ = __turbopack_context__.i("[externals]/mongoose [external] (mongoose, cjs, [project]/node_modules/mongoose)");
 ;
@@ -59,40 +61,19 @@ const ProductSchema = new __TURBOPACK__imported__module__$5b$externals$5d2f$mong
     timestamps: true
 });
 const Product = __TURBOPACK__imported__module__$5b$externals$5d2f$mongoose__$5b$external$5d$__$28$mongoose$2c$__cjs$2c$__$5b$project$5d2f$node_modules$2f$mongoose$29$__["models"].Product || (0, __TURBOPACK__imported__module__$5b$externals$5d2f$mongoose__$5b$external$5d$__$28$mongoose$2c$__cjs$2c$__$5b$project$5d2f$node_modules$2f$mongoose$29$__["model"])("Product", ProductSchema);
+const __TURBOPACK__default__export__ = Product;
 }),
 "[project]/src/models/Order.ts [app-rsc] (ecmascript)", ((__turbopack_context__) => {
 "use strict";
 
 __turbopack_context__.s([
+    "Order",
+    ()=>Order,
     "default",
     ()=>__TURBOPACK__default__export__
 ]);
 var __TURBOPACK__imported__module__$5b$externals$5d2f$mongoose__$5b$external$5d$__$28$mongoose$2c$__cjs$2c$__$5b$project$5d2f$node_modules$2f$mongoose$29$__ = __turbopack_context__.i("[externals]/mongoose [external] (mongoose, cjs, [project]/node_modules/mongoose)");
 ;
-const OrderItemSchema = new __TURBOPACK__imported__module__$5b$externals$5d2f$mongoose__$5b$external$5d$__$28$mongoose$2c$__cjs$2c$__$5b$project$5d2f$node_modules$2f$mongoose$29$__["Schema"]({
-    product: {
-        type: __TURBOPACK__imported__module__$5b$externals$5d2f$mongoose__$5b$external$5d$__$28$mongoose$2c$__cjs$2c$__$5b$project$5d2f$node_modules$2f$mongoose$29$__["Schema"].Types.ObjectId,
-        ref: "Product",
-        required: true
-    },
-    name: {
-        type: String,
-        required: true
-    },
-    image: {
-        type: String,
-        required: true
-    },
-    price: {
-        type: Number,
-        required: true
-    },
-    quantity: {
-        type: Number,
-        required: true,
-        min: 1
-    }
-});
 const OrderSchema = new __TURBOPACK__imported__module__$5b$externals$5d2f$mongoose__$5b$external$5d$__$28$mongoose$2c$__cjs$2c$__$5b$project$5d2f$node_modules$2f$mongoose$29$__["Schema"]({
     user: {
         type: __TURBOPACK__imported__module__$5b$externals$5d2f$mongoose__$5b$external$5d$__$28$mongoose$2c$__cjs$2c$__$5b$project$5d2f$node_modules$2f$mongoose$29$__["Schema"].Types.ObjectId,
@@ -100,48 +81,35 @@ const OrderSchema = new __TURBOPACK__imported__module__$5b$externals$5d2f$mongoo
         required: true
     },
     items: [
-        OrderItemSchema
+        {
+            product: {
+                type: __TURBOPACK__imported__module__$5b$externals$5d2f$mongoose__$5b$external$5d$__$28$mongoose$2c$__cjs$2c$__$5b$project$5d2f$node_modules$2f$mongoose$29$__["Schema"].Types.ObjectId,
+                ref: "Product",
+                required: true
+            },
+            qty: {
+                type: Number,
+                required: true,
+                min: 1
+            }
+        }
     ],
-    totalPrice: {
+    total: {
         type: Number,
         required: true
     },
-    isPaid: {
-        type: Boolean,
-        default: false
-    },
-    paidAt: {
-        type: Date
-    },
-    isDelivered: {
-        type: Boolean,
-        default: false
-    },
-    deliveredAt: {
-        type: Date
-    },
-    shippingAddress: {
-        address: {
-            type: String,
-            required: true
-        },
-        city: {
-            type: String,
-            required: true
-        },
-        postalCode: {
-            type: String,
-            required: true
-        },
-        country: {
-            type: String,
-            required: true
-        }
+    status: {
+        type: String,
+        enum: [
+            "pending",
+            "completed"
+        ],
+        default: "pending"
     }
 }, {
     timestamps: true
 });
-const Order = __TURBOPACK__imported__module__$5b$externals$5d2f$mongoose__$5b$external$5d$__$28$mongoose$2c$__cjs$2c$__$5b$project$5d2f$node_modules$2f$mongoose$29$__["default"].models.Order || __TURBOPACK__imported__module__$5b$externals$5d2f$mongoose__$5b$external$5d$__$28$mongoose$2c$__cjs$2c$__$5b$project$5d2f$node_modules$2f$mongoose$29$__["default"].model("Order", OrderSchema);
+const Order = __TURBOPACK__imported__module__$5b$externals$5d2f$mongoose__$5b$external$5d$__$28$mongoose$2c$__cjs$2c$__$5b$project$5d2f$node_modules$2f$mongoose$29$__["models"].Order || (0, __TURBOPACK__imported__module__$5b$externals$5d2f$mongoose__$5b$external$5d$__$28$mongoose$2c$__cjs$2c$__$5b$project$5d2f$node_modules$2f$mongoose$29$__["model"])("Order", OrderSchema);
 const __TURBOPACK__default__export__ = Order;
 }),
 "[project]/src/models/User.ts [app-rsc] (ecmascript)", ((__turbopack_context__) => {
@@ -149,11 +117,17 @@ const __TURBOPACK__default__export__ = Order;
 
 __turbopack_context__.s([
     "User",
-    ()=>User
+    ()=>User,
+    "default",
+    ()=>__TURBOPACK__default__export__
 ]);
 var __TURBOPACK__imported__module__$5b$externals$5d2f$mongoose__$5b$external$5d$__$28$mongoose$2c$__cjs$2c$__$5b$project$5d2f$node_modules$2f$mongoose$29$__ = __turbopack_context__.i("[externals]/mongoose [external] (mongoose, cjs, [project]/node_modules/mongoose)");
 ;
 const UserSchema = new __TURBOPACK__imported__module__$5b$externals$5d2f$mongoose__$5b$external$5d$__$28$mongoose$2c$__cjs$2c$__$5b$project$5d2f$node_modules$2f$mongoose$29$__["Schema"]({
+    name: {
+        type: String,
+        trim: true
+    },
     email: {
         type: String,
         required: true,
@@ -161,22 +135,24 @@ const UserSchema = new __TURBOPACK__imported__module__$5b$externals$5d2f$mongoos
         lowercase: true,
         trim: true
     },
-    passwordHash: {
+    password: {
         type: String,
         required: true
     },
     role: {
         type: String,
         enum: [
-            "user",
-            "admin"
+            "admin",
+            "partner",
+            "customer"
         ],
-        default: "user"
+        default: "customer"
     }
 }, {
     timestamps: true
 });
 const User = __TURBOPACK__imported__module__$5b$externals$5d2f$mongoose__$5b$external$5d$__$28$mongoose$2c$__cjs$2c$__$5b$project$5d2f$node_modules$2f$mongoose$29$__["models"].User || (0, __TURBOPACK__imported__module__$5b$externals$5d2f$mongoose__$5b$external$5d$__$28$mongoose$2c$__cjs$2c$__$5b$project$5d2f$node_modules$2f$mongoose$29$__["model"])("User", UserSchema);
+const __TURBOPACK__default__export__ = User;
 }),
 "[project]/src/app/(admin)/admin/page.tsx [app-rsc] (ecmascript)", ((__turbopack_context__) => {
 "use strict";
